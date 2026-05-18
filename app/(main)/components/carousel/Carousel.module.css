@@ -1,0 +1,517 @@
+/* Carousel.module.css */
+
+/* Enhanced Switch Out Animations */
+@keyframes switchOutMain {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+    20% {
+        transform: translate(40px, -30px) scale(1.1) rotate(5deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(150px, -120px) scale(0.8) rotate(15deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+}
+
+@keyframes switchOutSmall {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+    20% {
+        transform: translate(-30px, -40px) scale(1.1) rotate(-5deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-120px, -150px) scale(0.8) rotate(-15deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+}
+
+@keyframes switchOutSide {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+    20% {
+        transform: translate(30px, 40px) scale(1.1) rotate(8deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(120px, 150px) scale(0.8) rotate(20deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+}
+
+/* Enhanced Switch In Animations */
+@keyframes switchInMain {
+    0% {
+        transform: translate(-150px, 120px) scale(0.8) rotate(-15deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    30% {
+        transform: translate(-40px, 30px) scale(1.05) rotate(-5deg);
+        opacity: 0.5;
+        filter: blur(3px);
+    }
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes switchInSmall {
+    0% {
+        transform: translate(120px, -150px) scale(0.8) rotate(15deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    30% {
+        transform: translate(30px, -40px) scale(1.05) rotate(5deg);
+        opacity: 0.5;
+        filter: blur(3px);
+    }
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+@keyframes switchInSide {
+    0% {
+        transform: translate(-120px, -150px) scale(0.8) rotate(-20deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    30% {
+        transform: translate(-30px, -40px) scale(1.05) rotate(-8deg);
+        opacity: 0.5;
+        filter: blur(3px);
+    }
+    100% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+/* Text Slide Animations */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Background Animation Keyframes */
+@keyframes floatOrb1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, 30px) scale(1.1); }
+    50% { transform: translate(100px, -20px) scale(0.9); }
+    75% { transform: translate(30px, 50px) scale(1.05); }
+}
+
+@keyframes floatOrb2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-60px, -40px) scale(0.9); }
+    50% { transform: translate(-100px, 30px) scale(1.1); }
+    75% { transform: translate(-40px, -50px) scale(1.05); }
+}
+
+@keyframes floatOrb3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(40px, -60px) scale(1.05); }
+    50% { transform: translate(-30px, 70px) scale(0.95); }
+    75% { transform: translate(60px, -30px) scale(1.1); }
+}
+
+@keyframes rotateRing {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateRingReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes pulseRing {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatParticle2 {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-100px) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatParticle3 {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes waveExpand {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+@keyframes pulseSignal {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Pattern Animations */
+@keyframes moveDots {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+@keyframes moveWaves {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+@keyframes moveCircuits {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 50px; }
+}
+
+/* Animation Classes */
+.animate-switch-out-main {
+    animation: switchOutMain 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-switch-out-small {
+    animation: switchOutSmall 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-switch-out-side {
+    animation: switchOutSide 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-switch-in-main {
+    animation: switchInMain 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-switch-in-small {
+    animation: switchInSmall 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-switch-in-side {
+    animation: switchInSide 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.text-slide-in {
+    animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.text-slide-in-delay {
+    animation: slideInFromRight 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.button-pop-in {
+    animation: popIn 0.5s ease-out 0.4s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* Background Container */
+.background-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Orbs */
+.gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.4), rgba(59, 130, 246, 0.2));
+    top: -200px;
+    left: -200px;
+    animation: floatOrb1 20s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.3), rgba(59, 130, 246, 0.1));
+    bottom: -250px;
+    right: -250px;
+    animation: floatOrb2 25s ease-in-out infinite;
+}
+
+.orb-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.3), rgba(239, 68, 68, 0.1));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: floatOrb3 18s ease-in-out infinite;
+}
+
+/* Pattern Overlays */
+.pattern-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.dots {
+    background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: moveDots 60s linear infinite;
+}
+
+.waves {
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,0.1) 35px, rgba(0,0,0,0.1) 70px);
+    animation: moveWaves 40s linear infinite;
+}
+
+.circuits {
+    background-image: 
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveCircuits 30s linear infinite;
+}
+
+.particles {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.2) 2px, transparent 2px);
+    background-size: 40px 40px;
+    animation: moveDots 50s linear infinite;
+}
+
+/* Particles Container */
+.particles-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.6), rgba(59, 130, 246, 0.6));
+    border-radius: 50%;
+    bottom: -10px;
+}
+
+.particle-0 {
+    left: 20%;
+    animation: floatParticle 8s linear infinite;
+    animation-delay: 0s;
+}
+
+.particle-1 {
+    left: 50%;
+    animation: floatParticle2 10s linear infinite;
+    animation-delay: 2s;
+}
+
+.particle-2 {
+    left: 80%;
+    animation: floatParticle3 9s linear infinite;
+    animation-delay: 4s;
+}
+
+/* Signal Waves */
+.signal-waves {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: waveExpand 3s ease-out infinite;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 2s;
+}
+
+/* Tech Rings */
+.tech-rings {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ring {
+    position: absolute;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+}
+
+.ring:nth-child(1) {
+    width: 150px;
+    height: 150px;
+    animation: rotateRing 12s linear infinite, pulseRing 3s ease-in-out infinite;
+}
+
+.ring:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    border-color: rgba(239, 68, 68, 0.3);
+    animation: rotateRingReverse 15s linear infinite, pulseRing 4s ease-in-out infinite;
+}
+
+.ring:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    border-color: rgba(168, 85, 247, 0.3);
+    animation: rotateRing 18s linear infinite, pulseRing 5s ease-in-out infinite;
+}
+
+/* Gradient Mesh */
+.gradient-mesh {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Image Fade In for new slides */
+.image-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
