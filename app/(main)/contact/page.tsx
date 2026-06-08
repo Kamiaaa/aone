@@ -62,7 +62,7 @@ const ContactPage = () => {
     {
       icon: FaPhone,
       title: 'Call Us',
-      details: '09542366393, 01824382951-52',
+      details: '09542366393, 01824382951-53',
       description: 'Mon-Fri from 9am to 6pm',
       color: 'from-red-500 to-red-700'
     },
