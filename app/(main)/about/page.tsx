@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // Added for Hero section consistency
 import { motion, useAnimation, useInView, Variants } from 'framer-motion';
 import { 
   FaRocket, 
@@ -68,13 +69,6 @@ const AboutPage = () => {
     }
   };
 
-  const scaleOnHover = {
-    hover: { 
-      scale: 1.05,
-      transition: { duration: 0.3 }
-    }
-  };
-
   const values = [
     {
       icon: FaTachometerAlt,
@@ -111,42 +105,45 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-x-hidden">
-      {/* Hero Section - Same style as Packages page */}
-      <div className="relative bg-gray-900 overflow-hidden">
+      
+      {/* Integrated Unified Hero Section matching components/Bandwidth.tsx */}
+      <div className="relative h-[40vh] min-h-65 w-full overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            className="w-full h-full object-cover opacity-40"
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2070&q=80"
-            alt="Modern office background"
+          <Image
+            src="/img/page-back.png"
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 mix-blend-multiply" />
+          {/* Dark Overlay matching template standard */}
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 py-24 sm:py-32 lg:py-40 px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className={`transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white text-sm font-medium mb-6">
-                <FaBolt className="w-4 h-4" />
-                Our Story & Mission
+        {/* Content Wrapper */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+          <div className={`transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              About A1 Communication
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+              Our Story & Mission — Providing regional leadership in high-volume broadband and fiber-optic infrastructures.
+            </p>
+            
+            {/* Kept your optional high-visibility sub-features with color alignments updated */}
+            <div className="flex flex-wrap justify-center gap-6 mt-6">
+              <div className="flex items-center gap-2 text-sm text-gray-200 font-medium bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                <FaRocket className="w-3.5 h-3.5 text-red-400" />
+                <span>Industry Leaders</span>
               </div>
-              <h1 className="text-4xl font-source font-bold text-white sm:text-5xl lg:text-6xl mb-6">
-                About <span className="text-red-200">A1 Communication</span>
-              </h1>
-              
-              {/* Feature indicators */}
-              <div className="flex flex-wrap justify-center gap-6 mt-8">
-                <div className="flex items-center gap-2 text-sm text-blue-100">
-                  <FaRocket className="w-4 h-4" />
-                  <span>Industry Leaders</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-blue-100">
-                  <MdDataUsage className="w-4 h-4 text-red-300" />
-                  <span>200K+ Customers</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-blue-100">
-                  <FiShield className="w-4 h-4 text-purple-300" />
-                  <span>15+ Years Experience</span>
-                </div>
+              <div className="flex items-center gap-2 text-sm text-gray-200 font-medium bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                <MdDataUsage className="w-3.5 h-3.5 text-red-400" />
+                <span>200K+ Customers</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-200 font-medium bg-black/20 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                <FiShield className="w-3.5 h-3.5 text-red-400" />
+                <span>15+ Years Experience</span>
               </div>
             </div>
           </div>
