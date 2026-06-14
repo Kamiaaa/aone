@@ -103,7 +103,7 @@ export default function IspFaq() {
         {/* Left Column - Image Section */}
         <div className="order-2 lg:order-1">
           <div className="sticky top-8">
-            <div className="bg-gradient-to-br from-blue-500 to-red-600 rounded-2xl overflow-hidden shadow-xl">
+            <div className="bg-linear-to-br from-red-500 to-red-600 rounded-2xl overflow-hidden shadow-xl">
               {/* Main Image - ISP/Network Illustration */}
               <div className="relative bg-white dark:bg-gray-800 p-8">
                 <svg className="w-full h-auto" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
